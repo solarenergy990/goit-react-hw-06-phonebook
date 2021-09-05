@@ -20,7 +20,7 @@ const deleteContact = value => {
 };
 
 const setFilter = value => {
-  console.log('setFilter:', value);
+  // console.log('setFilter:', value);
   return {
     type: actionTypes.SET_FILTER,
     payload: value,

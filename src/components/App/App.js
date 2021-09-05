@@ -4,7 +4,7 @@ import ContactsList from '../ContactsList/ContactsList';
 import Filter from '../Filter/Filter';
 // import initialContacts from '../../contacts.json';
 // import shortid from 'shortid';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import appActions from '../../redux/app/actions';
 
 // import useLocalStorage from '../../hooks/useLocalStorage';
