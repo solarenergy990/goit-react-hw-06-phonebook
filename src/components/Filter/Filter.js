@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import s from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => {
+  // console.log(onChange);
+  // console.log(value);
   return (
     <label>
       <p className={s.label}>Find contacts by name</p>
@@ -10,7 +12,7 @@ const Filter = ({ value, onChange }) => {
         className={s.input}
         type="text"
         value={value}
-        onChange={onChange}
+        onChange={evt => onChange(evt.currentTarget.value)}
       ></input>
     </label>
   );

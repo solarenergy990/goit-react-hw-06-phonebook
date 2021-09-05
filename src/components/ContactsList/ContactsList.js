@@ -4,6 +4,7 @@ import ContactListItem from '../ContactsList/ContactListItem/ContactListItem';
 import s from './ContactsLIst.module.css';
 
 const ContactsList = ({ contacts, onContactDelete, children }) => {
+  // console.log(onContactDelete);
   return (
     <div className={s.contacts}>
       {children}
