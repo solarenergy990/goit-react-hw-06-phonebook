@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 import shortid from 'shortid';
-import actionTypes from './types';
+// import actionTypes from './types';
 
-const addContact = createAction(actionTypes.ADD_CONTACT, text => {
+const addContact = createAction('app/addContact', text => {
   const { name, number } = text;
 
   return {
@@ -14,13 +14,13 @@ const addContact = createAction(actionTypes.ADD_CONTACT, text => {
   };
 });
 
-const deleteContact = createAction(actionTypes.DELETE_CONTACT, text => {
+const deleteContact = createAction('app/deleteContact', text => {
   return {
     payload: { id: text },
   };
 });
 
-const setFilter = createAction(actionTypes.SET_FILTER);
+const setFilter = createAction('app/setFilter');
 
 // const addContact = value => {
 //   const { name, number } = value;
