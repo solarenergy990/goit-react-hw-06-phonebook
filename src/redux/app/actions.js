@@ -1,30 +1,57 @@
+import { createAction } from '@reduxjs/toolkit';
 import shortid from 'shortid';
 import actionTypes from './types';
 
-const addContact = value => {
-  const { name, number } = value;
+const addContact = createAction(actionTypes.ADD_CONTACT, text => {
+  const { name, number } = text;
 
   return {
-    type: actionTypes.ADD_CONTACT,
     payload: {
       id: shortid.generate(),
       name,
       number,
     },
   };
-};
+});
 
-const deleteContact = value => {
-  // console.log(value);
-  return { type: actionTypes.DELETE_CONTACT, payload: { id: value } };
-};
-
-const setFilter = value => {
-  // console.log('setFilter:', value);
+const deleteContact = createAction(actionTypes.DELETE_CONTACT, text => {
   return {
-    type: actionTypes.SET_FILTER,
-    payload: value,
+    payload: { id: text },
   };
+});
+
+const setFilter = createAction(actionTypes.SET_FILTER);
+
+// const addContact = value => {
+//   const { name, number } = value;
+
+//   return {
+//     type: actionTypes.ADD_CONTACT,
+//     payload: {
+//       id: shortid.generate(),
+//       name,
+//       number,
+//     },
+//   };
+// };
+
+// const deleteContact = contactId => {
+//   // console.log(value);
+//   return { type: actionTypes.DELETE_CONTACT, payload: { id: contactId } };
+// };
+
+// const setFilter = value => {
+//   // console.log('setFilter:', value);
+//   return {
+//     type: actionTypes.SET_FILTER,
+//     payload: value,
+//   };
+// };
+
+const appActions = {
+  addContact,
+  deleteContact,
+  setFilter,
 };
 
-export default { addContact, deleteContact, setFilter };
+export default appActions;
